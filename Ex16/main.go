@@ -19,31 +19,16 @@ func main() {
 	agora := time.Date(ano, time.Month(mes), dia, 00, 00, 00, 00, time.Local)
 	fmt.Println("O seu nascimento caiu em uma:")
 
-	if agora.Weekday().String() == "Sunday" {
-		fmt.Printf("Domingo")
+	dias := map[string]string{
+		"Sunday": "Domingo",
+		"Monday": "Segunda-Feira", 
+		"Tuesday": "Terça-Feira",
+		"Wednesday": "Quarta-Feira",
+		"Thursday" : "Quinta-Feita",
+		"Friday": "Sexta-Feira",
+		"Saturday": "Sábado"
 	}
-
-	if agora.Weekday().String() == "Monday" {
-		fmt.Println("Segunda-feira")
-	}
-
-	if agora.Weekday().String() == "Tuesday" {
-		fmt.Println("Terça-feira")
-	}
-
-	if agora.Weekday().String() == "Wednesday" {
-		fmt.Println("Quarta-feira")
-	}
-
-	if agora.Weekday().String() == "Thursday" {
-		fmt.Println("Quinta-feira")
-	}
-
-	if agora.Weekday().String() == "Friday" {
-		fmt.Println("Sexta-feira")
-	}
-
-	if agora.Weekday().String() == "Saturday" {
-		fmt.Println("Sábado")
-	}
+	
+	fmt.Printf("%s\n", map[agora.Weekday().String()])
+	
 }
