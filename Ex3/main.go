@@ -7,6 +7,12 @@ func anoEmMinutos(ano int64) int64 {
 	return ano * anoEmMinutos
 }
 
+//Faltou segundos, de acordo com o enunciado
+func anoEmSegundos(ano int64) int64 {
+	return funcAnoEmMinutos(ano) * 60;
+}
+// -----
+
 func main() {
 	fmt.Printf("\n-- 3 - Criar uma função que converta anos para minutos e segundos. --\n\n")
 
@@ -16,5 +22,6 @@ func main() {
 	fmt.Scan(&ano)
 
 	resultado := anoEmMinutos(ano)
-	fmt.Println("O resultado é: ", resultado)
+	fmt.Println("O resultado é (em minutos): ", resultado)
+	fmt.Println("O resultado é (em segundos): ", anoEmSegundos(ano))
 }
