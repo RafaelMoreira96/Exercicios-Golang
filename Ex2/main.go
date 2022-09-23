@@ -12,7 +12,6 @@ func convertSectoMin(min, sec int) (int, int) {
 }
 
 func plural(n int) string {
-	// Assim pq é 0 minutos e 0 horas;
 	if (n  <= 1) { return "" }
 	return "s"
 }
