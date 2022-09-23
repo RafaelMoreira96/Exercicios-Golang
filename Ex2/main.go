@@ -17,12 +17,11 @@ func plural(n int) string {
 }
 
 func main() {
-	var min, sec, secTemp int
+	var min, sec, int
 	fmt.Printf("\n-- Exercício 2: Criar uma função que converta segundos para minutos e segundos. Ex: 80seg = 1 min e 20seg --\n\n")
 
 	fmt.Printf("Usuário, informe segundos: ")
 	fmt.Scan(&sec)
-	secTemp = sec
 	// A função tá ótima, aqui é só questão de legibilidade mesmo;
 	//Trocadilho só por precaução
 	if (sec < 0) { fmt.Printf("Não trabalhamos com relatividade, (ainda).") }
