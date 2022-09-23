@@ -29,6 +29,6 @@ func main() {
 		"Saturday": "Sábado"
 	}
 	
-	fmt.Printf("%s\n", map[agora.Weekday().String()])
+	fmt.Printf("%s\n", dias[agora.Weekday().String()])
 	
 }
