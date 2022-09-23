@@ -7,13 +7,26 @@ import (
 	"strings"
 )
 
+func daVolta (n int, min int, max int) int {
+	if (n > max) { return  (min + (n - max)) }
+}
+
 func cifra(texto string, param rune) string {
 	for _, v := range strings.ToLower(texto) {
 		if v <= 122 && v >= 97 {
-			if v == 122 {
-				v = 96
-			}
-			v = v + (param)
+			// Não entendi o que esse if faz, então tirei;
+			//if v == 122 {
+			//	v = 96
+			//}
+			
+			
+			// Como é bom sempre explicar o que tá acontecendo,
+			// se você colocar a letra 121 da tabela ASCII e um salto de 13;
+			// Você terminará com o caracter å, ASCII 134, ao invés de dar a volta;
+			// O código antigo está aqui comentado
+			// v = v + (param)
+			
+			v = daVolta(v + (param), 97, 122)
 			fmt.Printf("%c", v)
 		}
 	}
