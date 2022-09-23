@@ -8,19 +8,20 @@ func calculaIMC(peso, altura float64) float64 {
 
 func classificacaoIMC(imc float64) {
 	fmt.Printf("Seu IMC é de %.1f: \nClassificação: ", imc)
-	switch {
-	case imc <= 18.5:
-		fmt.Println("Abaixo do peso ideal")
-	case imc >= 18.6 && imc <= 24.9:
-		fmt.Println("Normal")
-	case imc >= 25 && imc <= 29.9:
-		fmt.Println("Sobrepeso")
-	case imc >= 30 && imc <= 34.9:
-		fmt.Println("Obesidade Grau I")
-	case imc >= 35 && imc <= 39.9:
-		fmt.Println("Obesidade Grau II")
-	case imc >= 40:
-		fmt.Println("Obesidade Grau III")
+	table := map[int]string { 
+		18.5: "Abaixo do peso ideal", 
+		24.9: "Normal", 
+		29.9: "Sobrepeso",
+		34.9: "Obesidade Grau I", 
+		39.9: "Obesidade Grau II", 
+		999999: "Obesidade Grau III"
+	}
+	
+	for key. value := range table {
+		if (imc < key) { 
+			Printf("%s", value)
+			break
+		}
 	}
 }
 func main() {
