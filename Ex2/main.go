@@ -11,6 +11,12 @@ func convertSectoMin(min, sec int) (int, int) {
 	return min, sec
 }
 
+func plural(n int) string {
+	// Assim pq é 0 minutos e 0 horas;
+	if (n  <= 1) { return "" }
+	return "s"
+}
+
 func main() {
 	var min, sec, secTemp int
 	fmt.Printf("\n-- Exercício 2: Criar uma função que converta segundos para minutos e segundos. Ex: 80seg = 1 min e 20seg --\n\n")
@@ -18,18 +24,11 @@ func main() {
 	fmt.Printf("Usuário, informe segundos: ")
 	fmt.Scan(&sec)
 	secTemp = sec
-
-	min, sec = convertSectoMin(min, sec)
-
-	fmt.Println(secTemp, "segundos convertidos em minutos e segundos é: ")
-
-	if min >= 2 && sec > 1 {
-		fmt.Println(min, "minutos e", sec, "segundos")
-	} else if min > 2 && sec == 1 {
-		fmt.Printf("%d minutos e %d segundo", min, sec)
-	} else if min == 1 && sec > 1 {
-		fmt.Println(min, "minuto e", sec, "segundos")
-	} else {
-		fmt.Println(min, "minuto e", sec, "segundo")
+	// A função tá ótima, aqui é só questão de legibilidade mesmo;
+	//Trocadilho só por precaução
+	if (sec < 0) { fmt.Printf("Não trabalhamos com relatividade, (ainda).") }
+	else {
+		min, sec = convertSectoMin(min, sec)
+		fmt.Printf("%d minuto%s e %d segundo%s", min, plural(min), sec, plural(sec))
 	}
 }
